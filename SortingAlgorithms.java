@@ -30,5 +30,10 @@ public class SortingAlgorithms {
      * ones given above. Make sure that the method accepts an array of
      * records
      */
+    public void bubbleSort(Record[] arr,) {
+        // TODO: Implement this sorting algorithm here.
+
+    }
+
 
 }
