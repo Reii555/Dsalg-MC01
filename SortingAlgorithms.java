@@ -9,7 +9,7 @@ public class SortingAlgorithms {
      * they will only be used in this class.
      */
 
-    // Assigned to:
+    // Assigned to: Choa
     public void insertionSort(Record[] arr, int n) {
         // TODO: Implement this sorting algorithm here.
 
@@ -32,13 +32,13 @@ public class SortingAlgorithms {
         }
     }
 
-    // Assigned to:
+    // Assigned to: Choa
     public void mergeSort(Record[] arr, int p, int r) {
         // TODO: Implement this sorting algorithm here.
 
     }
 
-    // Assigned to:
+    // Assigned to: Lagos
     public void bubbleSort(Record[] arr, int n) {
         // TODO: Implement this sorting algorithm here.
 
