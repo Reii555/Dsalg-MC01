@@ -8,8 +8,10 @@ public class SortingAlgorithms {
      * Make sure the helper functions have the private access modifier, as
      * they will only be used in this class.
      */
+    
+    private long stepCount = 0; // Helper variable used to store the empirical frequency count
 
-    // Assigned to:
+    // Assigned to: Choa
     public void insertionSort(Record[] arr, int n) {
         // TODO: Implement this sorting algorithm here.
 
@@ -32,16 +34,64 @@ public class SortingAlgorithms {
         }
     }
 
-    // Assigned to:
+    // Assigned to: Choa
     public void mergeSort(Record[] arr, int p, int r) {
         // TODO: Implement this sorting algorithm here.
 
     }
 
-    // Assigned to:
+    // Assigned to: Lagos
     public void bubbleSort(Record[] arr, int n) {
-        // TODO: Implement this sorting algorithm here.
+         boolean swapped;
 
+        //outer loop for each pass
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            //inner loop for comparing adjacent elements
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j].getIdNumber() > arr[j + 1].getIdNumber()) {
+                    //swaps arr[j] and arr[j+1]
+                    Record temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            //if no two elements were swapped in the inner loop, then break
+            if (!swapped) {
+                break;
+            }
+        }
+    }
+
+    /** 
+     * Helper method to increment the step counter.
+     * Accepts a parameter so multiple steps can be added at once
+     * (e.g., 3 steps for a swap operation).
+     * @param count number of steps to add to the counter
+     */
+    private void incrementStep(int count) {
+        stepCount += count;
+    }
+
+    /** 
+     * Resets the step counter back to zero.
+     * This is used before running a new sorting algorithm 
+     * so counts don’t carry over between runs.
+     */
+    public void resetStepCount() {
+        stepCount = 0;
+    }
+
+    /** 
+     * Retrieves the current step count.
+     * This allows classes like Main.java to access the 
+     * empirical frequency count after an algorithm finishes.
+     * 
+     * @return the current step count
+     */
+    public long getStepCount() {
+        return stepCount;
     }
 }
 

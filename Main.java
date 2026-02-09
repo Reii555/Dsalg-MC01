@@ -3,10 +3,10 @@ public class Main {
         /* Available dataset files:
             almostsorted.txt
             random100.txt
-            random100000.txt
             random25000.txt
             random50000.txt
             random75000.txt
+            random100000.txt
             totallyreversed.txt
         */
 
@@ -18,7 +18,7 @@ public class Main {
 
         // Change the filename here to test different datasets (Copy-paste from list above!)
         String filePath = "data/";
-        String filename = "totallyreversed.txt";
+        String filename = "random100.txt";
 
         Record[] records = fileReader.readFile(filePath + filename);
 
@@ -34,6 +34,7 @@ public class Main {
         
         /*** Insertion Sort ***/
         System.out.println("============= Insertion Sort =============");
+        sorter.resetStepCount(); // Reset step count before sorting
         System.out.println("Is sorted? (Before): " + isSorted(arr1));
         startTime = System.currentTimeMillis();
         sorter.insertionSort(arr1, arr1.length);
@@ -43,10 +44,12 @@ public class Main {
         executionTimeSec = executionTimeMs / 1000.0; // Convert to seconds
         System.out.println("Execution Time (in milliseconds): " + executionTimeMs + " ms");
         System.out.println("Execution Time (in seconds): " + executionTimeSec + " s");
-        System.out.println("==========================================\n");
+        System.out.println("Empirical Frequency Count: " + sorter.getStepCount());
+        System.out.println("==========================================\n"); 
 
         /*** Selection Sort ***/
         System.out.println("============= Selection Sort =============");
+        sorter.resetStepCount(); // Reset step count before sorting
         System.out.println("Is sorted? (Before): " + isSorted(arr2));
         startTime = System.currentTimeMillis();
         sorter.selectionSort(arr2, arr2.length);
@@ -56,10 +59,12 @@ public class Main {
         executionTimeSec = executionTimeMs / 1000.0; // Convert to seconds
         System.out.println("Execution Time (in milliseconds): " + executionTimeMs + " ms");
         System.out.println("Execution Time (in seconds): " + executionTimeSec + " s");
+        System.out.println("Empirical Frequency Count: " + sorter.getStepCount());
         System.out.println("==========================================\n");
 
         /*** Merge Sort ***/
         System.out.println("=============== Merge Sort ===============");
+        sorter.resetStepCount(); // Reset step count before sorting
         System.out.println("Is sorted? (Before): " + isSorted(arr3));
         startTime = System.currentTimeMillis();
         sorter.mergeSort(arr3, 0, arr3.length - 1);
@@ -69,10 +74,12 @@ public class Main {
         executionTimeSec = executionTimeMs / 1000.0; // Convert to seconds
         System.out.println("Execution Time (in milliseconds): " + executionTimeMs + " ms");
         System.out.println("Execution Time (in seconds): " + executionTimeSec + " s");
-        System.out.println("==========================================\n");
+        System.out.println("Empirical Frequency Count: " + sorter.getStepCount());
+        System.out.println("==========================================\n"); 
 
         /*** Bubble Sort ***/
         System.out.println("============== Bubble Sort ===============");
+        sorter.resetStepCount(); // Reset step count before sorting
         System.out.println("Is sorted? (Before): " + isSorted(arr4));
         startTime = System.currentTimeMillis();
         sorter.bubbleSort(arr4, arr4.length);
@@ -82,7 +89,8 @@ public class Main {
         executionTimeSec = executionTimeMs / 1000.0; // Convert to seconds
         System.out.println("Execution Time (in milliseconds): " + executionTimeMs + " ms");
         System.out.println("Execution Time (in seconds): " + executionTimeSec + " s");
-        System.out.println("==========================================\n");
+        System.out.println("Empirical Frequency Count: " + sorter.getStepCount());
+        System.out.println("==========================================\n"); 
     }
 
     /*
