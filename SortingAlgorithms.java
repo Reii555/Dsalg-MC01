@@ -8,7 +8,7 @@ public class SortingAlgorithms {
      * Make sure the helper functions have the private access modifier, as
      * they will only be used in this class.
      */
-    
+
     private long stepCount = 0; // Helper variable used to store the empirical frequency count
 
     // Assigned to: Choa
