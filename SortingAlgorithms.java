@@ -36,45 +36,79 @@ public class SortingAlgorithms {
 
     // Assigned to: Lagos
     public void mergeSort(Record[] arr, int p, int r) {
+        incrementStep(1);
         if (p < r) {
             int q = (p + r) / 2;
+            incrementStep(1); // Count the step for calculating the midpoint
+
             mergeSort(arr, p, q);
             mergeSort(arr, q + 1, r);
             merge(arr, p, q, r);
+
+            incrementStep(1); // Count the step for the end of the if condition
         }
+        incrementStep(1); // Count the step for the end of the method (base case reached)
     }
 
     private void merge(Record[] arr, int p, int q, int r) {
         int n1 = q - p + 1;
         int n2 = r - q;
+        incrementStep(2); // Count the steps for calculating n1 and n2
 
         Record[] left = new Record[n1];
         Record[] right = new Record[n2];
 
         // Copy data to temp arrays
+        incrementStep(1); // i initialization
         for (int i = 0; i < n1; i++) {
+            incrementStep(1);
             left[i] = arr[p + i];
+            incrementStep(2); // Count the steps for copying an element to the left array
+            incrementStep(1); // Count the step for the end of the loop iteration
         }
+        incrementStep(1); // Count the step for the end of the first loop
+
+        incrementStep(1); // j initialization
         for (int j = 0; j < n2; j++) {
+            incrementStep(1);
             right[j] = arr[q + 1 + j];
+            incrementStep(2); // Count the steps for copying an element to the right array
+            incrementStep(1); // Count the step for the end of the loop iteration
         }
+        incrementStep(1);
 
         int i = 0, j = 0, k = p;
+        incrementStep(3); // variable initializations
+
         while (i < n1 && j < n2) {
+            incrementStep(1); // Count the step for entering the while loop
+
+            incrementStep(1); // Count the step for the if condition
             if (left[i].getIdNumber() <= right[j].getIdNumber()) {
                 arr[k++] = left[i++];
+                incrementStep(4); // Count the steps for copying an element from the left array
             } else {
                 arr[k++] = right[j++];
+                incrementStep(4); // Count the steps for copying an element from the right array
             }
         }
+        incrementStep(1); // Count the step for exiting the while loop
 
         // Copy remaining elements
         while (i < n1) {
+            incrementStep(1); // Count the step for entering the while loop
             arr[k++] = left[i++];
+            incrementStep(3); // Count the steps for copying an element from the left array
         }
+        incrementStep(1); // Count the step for exiting the while loop
         while (j < n2) {
+            incrementStep(1); // Count the step for entering the while loop
             arr[k++] = right[j++];
+            incrementStep(3); // Count the steps for copying an element from the right array
         }
+        incrementStep(1); // Count the step for exiting the while loop
+
+        incrementStep(1); // Count the step for the end of the merge method
     }
 
     // Assigned to: Lagos
