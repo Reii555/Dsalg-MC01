@@ -36,7 +36,7 @@ public class SortingAlgorithms {
 
     // Assigned to: Lagos
     public void mergeSort(Record[] arr, int p, int r) {
-        incrementStep(1);
+        
         if (p < r) {
             int q = (p + r) / 2;
             incrementStep(1); // Count the step for calculating the midpoint
