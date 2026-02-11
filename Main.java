@@ -18,7 +18,7 @@ public class Main {
 
         // Change the filename here to test different datasets (Copy-paste from list above!)
         String filePath = "data/";
-        String filename = "random100.txt";
+        String filename = "totallyreversed.txt";
 
         Record[] records = fileReader.readFile(filePath + filename);
 
@@ -33,7 +33,7 @@ public class Main {
         // Just comment out other algorithms to test individually!
         
         /*** Insertion Sort ***/
-        System.out.println("============= Insertion Sort =============");
+        /*System.out.println("============= Insertion Sort =============");
         sorter.resetStepCount(); // Reset step count before sorting
         System.out.println("Is sorted? (Before): " + isSorted(arr1));
         startTime = System.currentTimeMillis();
@@ -63,7 +63,7 @@ public class Main {
         System.out.println("==========================================\n");
 
         /*** Merge Sort ***/
-        System.out.println("=============== Merge Sort ===============");
+        /*System.out.println("=============== Merge Sort ===============");
         sorter.resetStepCount(); // Reset step count before sorting
         System.out.println("Is sorted? (Before): " + isSorted(arr3));
         startTime = System.currentTimeMillis();
@@ -78,7 +78,7 @@ public class Main {
         System.out.println("==========================================\n"); 
 
         /*** Bubble Sort ***/
-        System.out.println("============== Bubble Sort ===============");
+        /*System.out.println("============== Bubble Sort ===============");
         sorter.resetStepCount(); // Reset step count before sorting
         System.out.println("Is sorted? (Before): " + isSorted(arr4));
         startTime = System.currentTimeMillis();
@@ -90,7 +90,7 @@ public class Main {
         System.out.println("Execution Time (in milliseconds): " + executionTimeMs + " ms");
         System.out.println("Execution Time (in seconds): " + executionTimeSec + " s");
         System.out.println("Empirical Frequency Count: " + sorter.getStepCount());
-        System.out.println("==========================================\n"); 
+        System.out.println("==========================================\n");*/
     }
 
     /*

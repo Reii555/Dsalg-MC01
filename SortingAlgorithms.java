@@ -82,20 +82,35 @@ public class SortingAlgorithms {
          boolean swapped;
 
         //outer loop for each pass
+        incrementStep(1);
         for (int i = 0; i < n - 1; i++) {
+            incrementStep(1); // Count the step for each pass
+
             swapped = false;
+
             //inner loop for comparing adjacent elements
+            incrementStep(1); // Count the step for entering the inner loop
             for (int j = 0; j < n - i - 1; j++) {
+                incrementStep(1); // Count the comparison step
+
+                incrementStep(1); // Count the step for the if condition
                 if (arr[j].getIdNumber() > arr[j + 1].getIdNumber()) {
                     //swaps arr[j] and arr[j+1]
                     Record temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                     swapped = true;
+                    incrementStep(3); // Count the 3 steps involved in a swap operation
                 }
+                incrementStep(1); // Count the step for the end of the inner loop iteration
             }
+            incrementStep(1); // Count the step for the end of the outer loop iteration
+
+            incrementStep(1); // Count the step for checking if any swaps were made in this pass
+            
             //if no two elements were swapped in the inner loop, then break
             if (!swapped) {
+                incrementStep(1); // Count the step for breaking out of the loop
                 break;
             }
         }
