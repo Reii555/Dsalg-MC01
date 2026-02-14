@@ -13,8 +13,35 @@ public class SortingAlgorithms {
 
     // Assigned to: Choa
     public void insertionSort(Record[] arr, int n) {
-        // TODO: Implement this sorting algorithm here.
-
+    
+    // Start from index 1 as the first element is considered sorted
+        incrementStep(1); // Count the initialization of i
+        for (int i = 1; i < n; i++) {
+            incrementStep(1); // Count the step for each outer loop iteration
+        
+            // Store the current element to be inserted
+            Record key = arr[i];
+            int j = i - 1;
+            incrementStep(2); // Count the steps for key assignment and j initialization
+        
+            incrementStep(1); // Count the step for entering the while loop
+      
+            while (j >= 0 && arr[j].getIdNumber() > key.getIdNumber()) {
+                incrementStep(1); // Count the step for the while condition check
+            
+                arr[j + 1] = arr[j];
+                j--;
+                incrementStep(3); // Count the steps for shifting element and decrementing j
+                incrementStep(1); // Count the step for the end of the while loop iteration
+            }
+            incrementStep(1); // Count the step for exiting the while loop
+        
+            
+            arr[j + 1] = key;
+            incrementStep(2); // Count the steps for inserting the key
+            incrementStep(1); // Count the step for the end of the outer loop iteration
+        }
+        incrementStep(1); // Count the step for the end of the method
     }
 
     // Assigned to: Patricia Nicole S. Simbahan
@@ -180,4 +207,5 @@ public class SortingAlgorithms {
         return stepCount;
     }
 }
+
 
